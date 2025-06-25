@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum - RMN</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Scripts de idioma -->
+<script>
+  const traducciones = {
+  "es": {
+    "navbar": {
+      "idioma": "Idioma",
+      "sobreMi": "Sobre Mí",
+      "proyectos": "Proyectos",
+      "estudios": "Estudios",
+      "certificados": "Certificaciones",
+      "experiencia": "Experiencia",
+      "contacto": "Contacto"
+    },
+    "sobremi": {
+      "saludo": "¡Hola! Soy Roberth Muñoz Nanne!",
+      "descripcion": "Profesional en Tecnologías de Información con más de cuatro años de experiencia en soporte técnico, servicio al cliente y programación. Especializado en resolución de problemas técnicos de hardware y software, consolidados conocimientos en redes LAN y Wireless, administración de sistemas operativos y herramientas de productividad (Office 360). Manejo de lenguajes de programación como Python, Java y C#, con enfoque en la mejora continua, comunicación efectiva y atención al cliente. Comprometido con el aprendizaje constante y trabajo en equipo."
+    },
+    "proyectos": {
+      "titulo": "Mis Proyectos",
+      "proyecto1": {
+        "titulo": "Sistema Bibliotecario",
+        "herramientasLabel": "Herramientas:",
+        "herramientas": "Java, Swing",
+        "f1": "Interfaz gráfica desarrollada con Java Swing",
+        "f2": "Gestión de libros, préstamos y usuarios",
+        "f3": "Sistema de búsqueda y validaciones de datos"
+      },
+      "proyecto2": {
+        "titulo": "Simulación Domótica Avanzada",
+        "herramientasLabel": "Herramientas:",
+        "herramientas": "C#, .NET Framework, Windows Forms",
+        "f1": "Simulación de encendido y apagado de luces por botones o por horario",
+        "f2": "Cambiar nombre y color de luces dinámicamente",
+        "f3": "Simulación de horas del día con control automatizado",
+        "f4": "Modo 'en casa' o 'fuera de casa' para activar escenas inteligentes"
+      },
+      "proyecto3": {
+        "titulo": "Sistema de Gestión de Recursos Humanos",
+        "herramientasLabel": "Herramientas:",
+        "herramientas": "ASP.NET Web Forms, C#, SQL Server",
+        "f1": "Login seguro con cookies y verificación de roles",
+        "f2": "Gestión de trabajadores y control de vacaciones por parte de RH",
+        "f3": "Panel de trabajador para modificar datos y solicitar vacaciones",
+        "f4": "Acceso y permisos diferenciados según el tipo de usuario"
+      },
+      "proyecto4": {
+        "titulo": "Sistema de Cálculo de IMC",
+        "herramientasLabel": "Herramientas:",
+        "herramientas": "Python, Tkinter, XML, JSON, PDF",
+        "f1": "Registro y edición de usuarios con datos antropométricos",
+        "f2": "Cálculo automático del IMC y clasificación configurable",
+        "f3": "Generación de reportes en PDF",
+        "f4": "Procesamiento multihilo para evaluar todos los usuarios"
+      },
+      "proyecto5": {
+        "titulo": "Plataforma de Servicios Varios",
+        "herramientasLabel": "Herramientas:",
+        "herramientas": "ASP.NET Web Forms, C#, SQL Server, Bootstrap, JavaScript",
+        "f1": "Multilogin con paneles para clientes, oferentes y administradores",
+        "f2": "Sistema de calificación y reputación de oferentes",
+        "f3": "Integración de mapas para ubicación del servicio",
+        "f4": "Páginas dinámicas generadas según los datos en la base de datos"
+      },
+      "proyecto6": {
+      "titulo": "Helltaker - Juego Puzzle",
+      "herramientasLabel": "Herramientas:",
+      "herramientas": "Godot, GDScript",
+      "f1": "Juego estilo puzzle basado en lógica y estrategia",
+      "f2": "Efectos visuales atractivos y manejo dinámico de luces",
+      "f3": "Sistema interno de lógica para resolución de niveles",
+      "f4": "Animaciones y ambientación estilo arcade"}
+    },
+
+    "estudios": {
+      "titulo": "Estudios",
+      "carrera1": "Diplomado en Tecnologías de Información - Colegio Universitario Cartago (2023 - 2026)",
+      "carrera2": "Diplomado en programación y desarrollo de Videojuegos - Universidad Creativa (2022-2024)"
+    },
+    "certificados": {
+      "titulo": "Certificaciones"
+    },
+    "experiencia": {
+      "titulo": "Experiencia",
+      "trabajo1": "Servicio al Cliente y Soporte Tecnico - Tavrida S.A. (2020 - 2025)",
+      "trabajo2": "Tutor Académico en Programación, Informática y Matemáticas (2021 - Actualidad)"
+    },
+    "habilidades": {
+      "tituloHabilidades": "Habilidades",
+      "tecnicas": "Técnicas",
+      "blandas": "Blandas",
+      "herramientas": "Herramientas",
+      "idiomas": "Idiomas",
+      "modalTecnicas": "Habilidades Técnicas",
+      "modalBlandas": "Habilidades Blandas",
+      "modalHerramientas": "Herramientas",
+      "modalIdiomas": "Idiomas",
+      "listaTecnicas": [
+        "Programación en C#, .NET Framework, Java, Python, Node.js",
+        "Desarrollo web (HTML, CSS, JavaScript, Bootstrap)",
+        "Administración de redes LAN/WiFi",
+        "Manejo de bases de datos (SQL Server, MySQL, SQL Lite, PostgreSQL, Oracle, ETL, Data Warehouse)"
+      ],
+      "listaBlandas": [
+        "Comunicación, Trabajo en Equipo, Resolución de Problemas",
+        "Pensamineto Analítico, Escucha Activa, Organización",
+        "Creatividad, Empatía, Gestión del Tiempo, Adaptabilidad"
+      ],
+      "listaHerramientas": [
+        "Visual Studio, VS Code, NetBeans, TextPad",
+        "Microsoft Office 365",
+        "Git y GitHub",
+        "Windows y Linux"
+      ],
+      "listaIdiomas": [
+        "Español Nativo",
+        "Inglés B2",
+        "Alemán A2"
+      ]
+    },
+    "contacto": {
+      "titulo": "Redes y Contactos",
+      "contactame": "Contactame",
+      "nombre": "Nombre",
+      "correo": "Correo",
+      "mensaje": "Mensaje",
+      "enviar": "Enviar"
+    }
+  },
+  "en": {
+    "navbar": {
+      "idioma": "Language",
+      "sobreMi": "About Me",
+      "proyectos": "Projects",
+      "estudios": "Education",
+      "certificados": "Certifications",
+      "experiencia": "Experience",
+      "contacto": "Contact"
+    },
+    "sobremi": {
+      "saludo": "Hi! I'm Roberth Muñoz Nanne!",
+      "descripcion": "Information Technology student with more than four years of experience in technical support, customer service and programming. Specialized in hardware and software technical troubleshooting, consolidated knowledge in LAN and Wireless networks, operating system administration and productivity tools (Office 360). Handling programming languages such as Python, Java and C#, with a focus on continuous improvement, effective communication and customer service. Committed to constant learning and teamwork."
+    },
+    "proyectos": {
+      "titulo": "My Projects",
+      "proyecto1": {
+        "titulo": "Library Management System",
+        "herramientasLabel": "Tools:",
+        "herramientas": "Java, Swing",
+        "f1": "Graphical interface developed with Java Swing",
+        "f2": "Book, loan and user management",
+        "f3": "Search system and data validation"
+      },
+      "proyecto2": {
+        "titulo": "Advanced Home Automation Simulation",
+        "herramientasLabel": "Tools:",
+        "herramientas": "C#, .NET Framework, Windows Forms",
+        "f1": "Lighting on/off simulation by buttons or schedule",
+        "f2": "Dynamically rename and change color of lights",
+        "f3": "Time of day simulation with automated control",
+        "f4": "\"At home\" or \"away\" modes for smart scenes"
+      },
+      "proyecto3": {
+        "titulo": "Human Resources Management System",
+        "herramientasLabel": "Tools:",
+        "herramientas": "ASP.NET Web Forms, C#, SQL Server",
+        "f1": "Secure login with cookies and role verification",
+        "f2": "HR management of employees and vacation control",
+        "f3": "Employee panel to edit data and request vacation",
+        "f4": "Role-based access and permissions"
+      },
+      "proyecto4": {
+        "titulo": "BMI Calculation System",
+        "herramientasLabel": "Tools:",
+        "herramientas": "Python, Tkinter, XML, JSON, PDF",
+        "f1": "Register and edit users with anthropometric data",
+        "f2": "Automatic BMI calculation with configurable classification",
+        "f3": "PDF report generation",
+        "f4": "Multithreaded processing to evaluate all users"
+      },
+      "proyecto5": {
+        "titulo": "Various Services Platform",
+        "herramientasLabel": "Tools:",
+        "herramientas": "ASP.NET Web Forms, C#, SQL Server, Bootstrap, JavaScript",
+        "f1": "Multi-login with panels for clients, providers and admins",
+        "f2": "Rating and reputation system for providers",
+        "f3": "Integrated maps for service location",
+        "f4": "Dynamic pages generated based on database content"
+      },
+      "proyecto6": {
+        "titulo": "Helltaker - Puzzle Game",
+        "herramientasLabel": "Tools:",
+        "herramientas": "Godot, GDScript",
+        "f1": "Puzzle-style game based on logic and strategy",
+        "f2": "Attractive visual effects and dynamic light handling",
+        "f3": "Internal logic system for level resolution",
+        "f4": "Arcade-style animations and atmosphere"
+        }
+  },
+    "estudios": {
+      "titulo": "Education",
+      "carrera1": "Diploma in Information Technologies - Colegio Universitario Cartago (2023 - 2026)",
+      "carrera2": "Diploma in Game Programming and Development - Universidad Creativa (2022-2024)"
+    },
+    "certificados": {
+      "titulo": "Certifications"
+    },
+    "experiencia": {
+      "titulo": "Experience",
+      "trabajo1": "Customer Service and Technical Support - Tavrida S.A. (2020 - 2025)",
+      "trabajo2": "Academic Tutor in Programming, Computer Science and Mathematics - Colegio Universitario Cartago (2021 - Present)"
+    },
+    "habilidades": {
+      "tituloHabilidades": "Skills",
+      "tecnicas": "Technical",
+      "blandas": "Soft",
+      "herramientas": "Tools",
+      "idiomas": "Languages",
+      "modalTecnicas": "Technical Skills",
+      "modalBlandas": "Soft Skills",
+      "modalHerramientas": "Tools",
+      "modalIdiomas": "Languages",
+      "listaTecnicas": [
+        "Programming in C#, .NET Framework, Java, Python, Node.js",
+        "Web development (HTML, CSS, JavaScript, Bootstrap)",
+        "LAN/WiFi network administration",
+        "Database management (SQL Server, MySQL, SQLite, PostgreSQL, Oracle, ETL, Data Warehouse)"
+      ],
+      "listaBlandas": [
+        "Communication, Teamwork, Problem Solving",
+        "Analytical Thinking, Active Listening, Organization",
+        "Creativity, Empathy, Time Management, Adaptability"
+      ],
+      "listaHerramientas": [
+        "Visual Studio, VS Code, NetBeans, TextPad",
+        "Microsoft Office 365",
+        "Git and GitHub",
+        "Windows and Linux"
+      ],
+      "listaIdiomas": [
+        "Native Spanish",
+        "English B2",
+        "German A2"
+      ]
+    },
+    "contacto": {
+      "titulo": "Networks and Contact",
+      "contactame": "Contact Me",
+      "nombre": "Name",
+      "correo": "Email",
+      "mensaje": "Message",
+      "enviar": "Send"
+    }
+  },
+  "de": {
+  "navbar": {
+    "idioma": "Sprache",
+    "sobreMi": "Über mich",
+    "proyectos": "Projekte",
+    "estudios": "Studium",
+    "certificados": "Zertifizierungen",
+    "experiencia": "Erfahrung",
+    "contacto": "Kontakt"
+  },
+  "sobremi": {
+    "saludo": "Hallo! Ich bin Roberth Muñoz Nanne!",
+    "descripcion": "IT-Fachmann mit über vier Jahren Erfahrung im technischen Support, Kundenservice und Programmierung. Spezialisiert auf Fehlerbehebung bei Hard- und Software, fundierte Kenntnisse in LAN- und WLAN-Netzwerken, Betriebssystemverwaltung und Produktivitätstools (Office 360). Kenntnisse in Programmiersprachen wie Python, Java und C#, mit Fokus auf kontinuierliche Verbesserung, effektive Kommunikation und Kundenzufriedenheit. Engagiert für kontinuierliches Lernen und Teamarbeit."
+  },
+  "proyectos": {
+    "titulo": "Meine Projekte",
+    "proyecto1": {
+      "titulo": "Bibliotheksverwaltungssystem",
+      "herramientasLabel": "Werkzeuge:",
+      "herramientas": "Java, Swing",
+      "f1": "Grafische Oberfläche mit Java Swing entwickelt",
+      "f2": "Verwaltung von Büchern, Ausleihen und Benutzern",
+      "f3": "Suchsystem und Datenvalidierung"
+    },
+    "proyecto2": {
+      "titulo": "Erweiterte Hausautomationssimulation",
+      "herramientasLabel": "Werkzeuge:",
+      "herramientas": "C#, .NET Framework, Windows Forms",
+      "f1": "Lichtsteuerung per Knopfdruck oder Zeitplan",
+      "f2": "Lichtnamen und -farben dynamisch ändern",
+      "f3": "Simulation der Tageszeit mit Automatisierung",
+      "f4": "Modi „Zuhause“ oder „Abwesend“ für intelligente Szenarien"
+    },
+    "proyecto3": {
+      "titulo": "Personalverwaltungssystem",
+      "herramientasLabel": "Werkzeuge:",
+      "herramientas": "ASP.NET Web Forms, C#, SQL Server",
+      "f1": "Sicheres Login mit Cookies und Rollenprüfung",
+      "f2": "Verwaltung von Mitarbeitern und Urlaub durch HR",
+      "f3": "Mitarbeiterbereich zum Bearbeiten von Daten und Urlaubsanträgen",
+      "f4": "Zugriffsrechte je nach Benutzerrolle"
+    },
+    "proyecto4": {
+      "titulo": "BMI-Berechnungssystem",
+      "herramientasLabel": "Werkzeuge:",
+      "herramientas": "Python, Tkinter, XML, JSON, PDF",
+      "f1": "Registrierung und Bearbeitung von Benutzern mit Körperdaten",
+      "f2": "Automatische BMI-Berechnung mit konfigurierbarer Klassifikation",
+      "f3": "PDF-Berichtserstellung",
+      "f4": "Multithreading zur gleichzeitigen Bewertung aller Benutzer"
+    },
+    "proyecto5": {
+      "titulo": "Plattform für verschiedene Dienstleistungen",
+      "herramientasLabel": "Werkzeuge:",
+      "herramientas": "ASP.NET Web Forms, C#, SQL Server, Bootstrap, JavaScript",
+      "f1": "Mehrfach-Login für Kunden, Anbieter und Admins",
+      "f2": "Bewertungs- und Reputationssystem für Anbieter",
+      "f3": "Integration von Karten zur Dienststandortanzeige",
+      "f4": "Dynamische Seiten basierend auf Datenbankinhalten"
+    },
+    "proyecto6": {
+      "titulo": "Helltaker - Puzzlespiel",
+      "herramientasLabel": "Werkzeuge:",
+      "herramientas": "Godot, GDScript",
+      "f1": "Logik- und strategiebasiertes Puzzlespiel",
+      "f2": "Attraktive visuelle Effekte und dynamische Lichtsteuerung",
+      "f3": "Internes Logiksystem zur Lösung der Level",
+      "f4": "Arcade-ähnliche Animationen und Atmosphäre"}
+  },
+  "estudios": {
+    "titulo": "Studium",
+    "carrera1": "Diplom in Informationstechnologien – Colegio Universitario Cartago (2023–2026)",
+    "carrera2": "Diplom in Spieleprogrammierung und -entwicklung – Universidad Creativa (2022–2024)"
+  },
+  "certificados": {
+    "titulo": "Zertifizierungen"
+  },
+  "experiencia": {
+    "titulo": "Erfahrung",
+    "trabajo1": "Kundendienst und technischer Support – Tavrida S.A. (2020–2025)",
+    "trabajo2": "Akademischer Tutor für Programmierung, Informatik und Mathematik  - Colegio Universitario Cartago (2021 – Heute)"
+  },
+  "habilidades": {
+    "tituloHabilidades": "Fähigkeiten",
+    "tecnicas": "Technisch",
+    "blandas": "Sozial",
+    "herramientas": "Werkzeuge",
+    "idiomas": "Sprachen",
+    "modalTecnicas": "Technische Fähigkeiten",
+    "modalBlandas": "Soziale Kompetenzen",
+    "modalHerramientas": "Werkzeuge",
+    "modalIdiomas": "Sprachen",
+    "listaTecnicas": [
+      "Programmierung in C#, .NET Framework, Java, Python, Node.js",
+      "Webentwicklung (HTML, CSS, JavaScript, Bootstrap)",
+      "Verwaltung von LAN/WLAN-Netzwerken",
+      "Datenbankverwaltung (SQL Server, MySQL, SQLite, PostgreSQL, Oracle, ETL, Data Warehouse)"
+    ],
+    "listaBlandas": [
+      "Kommunikation, Teamarbeit, Problemlösung",
+      "Analytisches Denken, Aktives Zuhören, Organisation",
+      "Kreativität, Empathie, Zeitmanagement, Anpassungsfähigkeit"
+    ],
+    "listaHerramientas": [
+      "Visual Studio, VS Code, NetBeans, TextPad",
+      "Microsoft Office 365",
+      "Git und GitHub",
+      "Windows und Linux"
+    ],
+    "listaIdiomas": [
+      "Spanisch (Muttersprache)",
+      "Englisch B2",
+      "Deutsch A2"
+    ]
+  },
+  "contacto": {
+    "titulo": "Netzwerke und Kontakt",
+    "contactame": "Kontaktiere mich",
+    "nombre": "Name",
+    "correo": "E-Mail",
+    "mensaje": "Nachricht",
+    "enviar": "Senden"
+  }
+}
+}
+
+  function cambiarIdioma(idioma) {
+    const t = traducciones[idioma];
+
+    // Navbar
+    document.getElementById("idiomaDropdown").textContent = t.navbar.idioma;
+    document.querySelector("a[href='#sobremi']").textContent = t.navbar.sobreMi;
+    document.querySelector("a[href='#proyectos']").textContent = t.navbar.proyectos;
+    document.querySelector("a[href='#estudios']").textContent = t.navbar.estudios;
+    document.querySelector("a[href='#certificados']").textContent = t.navbar.certificados;
+    document.querySelector("a[href='#experiencia']").textContent = t.navbar.experiencia;
+    document.querySelector("a[href='#contactame']").textContent = t.navbar.contacto;
+
+    // Sobre Mí
+    document.querySelector("#sobremi h2").textContent = t.sobremi.saludo;
+    document.querySelector("#sobremi p").textContent = t.sobremi.descripcion;
+
+    // Proyectos
+    document.querySelector("#proyectos h2").textContent = t.proyectos.titulo;
+
+    const proyectos = document.querySelectorAll("#carouselProyectos .carousel-item");
+
+    // Proyecto 1
+    const p1 = t.proyectos.proyecto1;
+    proyectos[0].querySelector("h5").textContent = p1.titulo;
+    proyectos[0].querySelector("p").innerHTML = `<strong>${p1.herramientasLabel}</strong> ${p1.herramientas}`;
+    const lista1 = proyectos[0].querySelectorAll("li");
+    lista1[0].textContent = "✔ " + p1.f1;
+    lista1[1].textContent = "✔ " + p1.f2;
+    lista1[2].textContent = "✔ " + p1.f3;
+
+    // Proyecto 2
+    const p2 = t.proyectos.proyecto2;
+    proyectos[1].querySelector("h5").textContent = p2.titulo;
+    proyectos[1].querySelector("p").innerHTML = `<strong>${p2.herramientasLabel}</strong> ${p2.herramientas}`;
+    const lista2 = proyectos[1].querySelectorAll("li");
+    lista2[0].textContent = "✔ " + p2.f1;
+    lista2[1].textContent = "✔ " + p2.f2;
+    lista2[2].textContent = "✔ " + p2.f3;
+    lista2[3].textContent = "✔ " + p2.f4;
+
+    // Proyecto 3
+    const p3 = t.proyectos.proyecto3;
+    proyectos[2].querySelector("h5").textContent = p3.titulo;
+    proyectos[2].querySelector("p").innerHTML = `<strong>${p3.herramientasLabel}</strong> ${p3.herramientas}`;
+    const lista3 = proyectos[2].querySelectorAll("li");
+    lista3[0].textContent = "✔ " + p3.f1;
+    lista3[1].textContent = "✔ " + p3.f2;
+    lista3[2].textContent = "✔ " + p3.f3;
+    lista3[3].textContent = "✔ " + p3.f4;
+
+    // Proyecto 4
+    const p4 = t.proyectos.proyecto4;
+    proyectos[3].querySelector("h5").textContent = p4.titulo;
+    proyectos[3].querySelector("p").innerHTML = `<strong>${p4.herramientasLabel}</strong> ${p4.herramientas}`;
+    const lista4 = proyectos[3].querySelectorAll("li");
+    lista4[0].textContent = "✔ " + p4.f1;
+    lista4[1].textContent = "✔ " + p4.f2;
+    lista4[2].textContent = "✔ " + p4.f3;
+    lista4[3].textContent = "✔ " + p4.f4;
+
+    // Proyecto 5
+    const p5 = t.proyectos.proyecto5;
+    proyectos[4].querySelector("h5").textContent = p5.titulo;
+    proyectos[4].querySelector("p").innerHTML = `<strong>${p5.herramientasLabel}</strong> ${p5.herramientas}`;
+    const lista5 = proyectos[4].querySelectorAll("li");
+    lista5[0].textContent = "✔ " + p5.f1;
+    lista5[1].textContent = "✔ " + p5.f2;
+    lista5[2].textContent = "✔ " + p5.f3;
+    lista5[3].textContent = "✔ " + p5.f4;
+
+    //Proyecto 6
+    const p6 = t.proyectos.proyecto6;
+    proyectos[5].querySelector("h5").textContent = p6.titulo;
+    proyectos[5].querySelector("p").innerHTML = `<strong>${p6.herramientasLabel}</strong> ${p6.herramientas}`;
+    const lista6 = proyectos[5].querySelectorAll("li");
+    lista6[0].textContent = "✔ " + p6.f1;
+    lista6[1].textContent = "✔ " + p6.f2;
+    lista6[2].textContent = "✔ " + p6.f3;
+    lista6[3].textContent = "✔ " + p6.f4;
+
+    // Estudios
+    document.querySelector("#estudios h2").textContent = t.estudios.titulo;
+    const estudiosItems = document.querySelectorAll("#estudios .list-group-item");
+    estudiosItems[0].textContent = t.estudios.carrera1;
+    estudiosItems[1].textContent = t.estudios.carrera2;
+
+    // Certificados
+    document.querySelector("#certificados h2").textContent = t.certificados.titulo;
+
+    // Experiencia
+    document.querySelector("#experiencia h2").textContent = t.experiencia.titulo;
+    const experienciaItems = document.querySelectorAll("#experiencia .list-group-item");
+    experienciaItems[0].textContent = t.experiencia.trabajo1;
+    experienciaItems[1].textContent = t.experiencia.trabajo2;
+
+    // Habilidades
+    document.querySelector("#habilidades h2").textContent = t.habilidades.tituloHabilidades;
+    const botones = document.querySelectorAll("#habilidades button");
+    botones[0].textContent = t.habilidades.tecnicas;
+    botones[1].textContent = t.habilidades.blandas;
+    botones[2].textContent = t.habilidades.herramientas;
+    botones[3].textContent = t.habilidades.idiomas;
+
+    document.getElementById("modalTecnicasLabel").textContent = t.habilidades.modalTecnicas;
+    document.getElementById("modalBlandasLabel").textContent = t.habilidades.modalBlandas;
+    document.getElementById("modalHerramientasLabel").textContent = t.habilidades.modalHerramientas;
+    document.getElementById("modalIdiomaslabel").textContent = t.habilidades.modalIdiomas;
+
+    const tecnicas = document.querySelectorAll("#modalTecnicas .modal-body li");
+    t.habilidades.listaTecnicas.forEach((texto, i) => tecnicas[i].textContent = texto);
+
+    const blandas = document.querySelectorAll("#modalBlandas .modal-body li");
+    t.habilidades.listaBlandas.forEach((texto, i) => blandas[i].textContent = texto);
+
+    const herramientas = document.querySelectorAll("#modalHerramientas .modal-body li");
+    t.habilidades.listaHerramientas.forEach((texto, i) => herramientas[i].textContent = texto);
+
+    const idiomas = document.querySelectorAll("#modalIdiomas .modal-body li");
+    t.habilidades.listaIdiomas.forEach((texto, i) => idiomas[i].textContent = texto);
+
+    // Contacto
+    document.querySelector("#contactame h2").textContent = t.contacto.titulo;
+    document.querySelector("h3.text-center.mb-4").textContent = t.contacto.contactame;
+    document.querySelector("label[for='nombre']").textContent = t.contacto.nombre;
+    document.querySelector("label[for='correo']").textContent = t.contacto.correo;
+    document.querySelector("label[for='mensaje']").textContent = t.contacto.mensaje;
+    document.querySelector("button[type='submit']").textContent = t.contacto.enviar;
+  }
+</script>
+
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .navbar {
+      background-color: #1f1f1f !important;
+    }
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #0dcaf0 !important;
+    }
+    .foto-perfil {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #0dcaf0;
+    }
+    .bg-light {
+      background-color: #1e1e1e !important;
+    }
+    .list-group-item {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+    .form-control {
+      background-color: #2a2a2a;
+      color: #ffffff;
+      border: 1px solid #444;
+    }
+    .form-control:focus {
+      background-color: #2a2a2a;
+      color: #ffffff;
+    }
+    iframe {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Roberth Muñoz Nanne</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="idiomaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Idioma
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="idiomaDropdown">
+            <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('es')">Español</a></li>
+            <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('en')">English</a></li>
+            <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('de')">Deutsch</a></li>
+          </ul>
+        </li>
+          <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estudios">Estudios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificados">Certificaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactame">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Sobre mí -->
+  <section id="sobremi" class="py-5 mt-5 text-white" style="background-image: url('../bannersobremi.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="d-flex flex-column flex-md-row align-items-center p-4 rounded" style="background-color: rgba(0, 0, 0, 0.812);">
+            <div class="text-center mb-4 mb-md-0 me-md-4">
+              <img src="../yo.jpg" alt="Tu foto" class="foto-perfil mb-3">
+            </div>
+            <div>
+              <h2 class="fw-bold">¡Hola! Soy Roberth Muñoz Nanne!</h2>
+              <p class="lead">Profesional en Tecnologías de Información con más de cuatro años de experiencia en soporte técnico, servicio al cliente y programación. Especializado en resolución de problemas técnicos de hardware y software, consolidados conocimientos en redes LAN y Wireless, administración de sistemas operativos y herramientas de productividad (Office 360). Manejo de lenguajes de programación como Python, Java y C#, con enfoque en la mejora continua, comunicación efectiva y atención al cliente. Comprometido con el aprendizaje constante y trabajo en equipo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Mis Proyectos</h2>
+      <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/pwZUo899jek" title="Proyecto 1" allowfullscreen></iframe>
+              </div>
+              <h5>Sistema Bibliotecario</h5>
+              <p><strong>Herramientas:</strong> Java, Java Swing, PostgreSQL</p>
+              <ul class="list-unstyled">
+                <li>✔ Codigo Orientado a Objetos</li>
+                <li>✔ Gestión Completa del Flujo Bibliotecario</li>
+                <li>✔ Interfaz Intuitiva</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/x14wVOIkzDw" title="Proyecto 2" allowfullscreen></iframe>
+              </div>
+              <h5>Simulación Domótica Avanzada</h5>
+              <p><strong>Herramientas:</strong> C#, .NET Framework, Windows Forms</p>
+              <ul class="list-unstyled">
+                <li>✔ Simulación de encendido y apagado de luces por botones o por horario</li>
+                <li>✔ Cambiar nombre y color de luces dinámicamente</li>
+                <li>✔ Simulación de horas del día con control automatizado</li>
+                <li>✔ Modo "en casa" o "fuera de casa" para activar escenas inteligentes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/jqbCt6EQE2I" title="Proyecto 3" allowfullscreen></iframe>
+              </div>
+              <h5>Sistema de Gestión de Recursos Humanos</h5>
+              <p><strong>Herramientas:</strong> ASP.NET Web Forms, C#, SQL Server</p>
+              <ul class="list-unstyled">
+                <li>✔ Login seguro con cookies y verificación de roles</li>
+                <li>✔ Gestión de trabajadores y control de vacaciones por parte de RH</li>
+                <li>✔ Panel de trabajador para modificar datos y solicitar vacaciones</li>
+                <li>✔ Acceso y permisos diferenciados según el tipo de usuario</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/fktACZw2WaY" title="Proyecto 4" allowfullscreen></iframe>
+              </div>
+              <h5>Sistema de Cálculo de IMC</h5>
+              <p><strong>Herramientas:</strong> Python, TKinter, XML, JSON, PDF</p>
+              <ul class="list-unstyled">
+                  <li>✔ Registro y edición de usuarios con datos antropométricos</li>
+                  <li>✔ Cálculo automático del IMC y clasificación configurable</li>
+                  <li>✔ Generación de reportes en PDF</li>
+                  <li>✔ Procesamiento multihilo para evaluar todos los usuarios</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/ofVdku96JxA" title="Proyecto 5" allowfullscreen></iframe>
+              </div>
+              <h5>Plataforma de Servicios Varios</h5>
+              <p><strong>Herramientas:</strong> ASP.NET Web Forms, C#, SQL Server, Bootstrap, JavaScript</p>
+              <ul class="list-unstyled">
+                  <li>✔ Multilogin con paneles para clientes, oferentes y administradores</li>
+                  <li>✔ Sistema de calificación y reputación de oferentes</li>
+                  <li>✔ Integración de mapas para ubicación del servicio</li>
+                  <li>✔ Páginas dinámicas generadas según los datos en la base de datos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/j4HCUly6l4k" title="Proyecto 6" allowfullscreen></iframe>
+              </div>
+              <h5>Helltaker - Juego Puzzle</h5>
+              <p><strong>Herramientas:</strong> Godot, GDScript</p>
+              <ul class="list-unstyled">
+                  <li>✔ Juego estilo puzzle basado en lógica y estrategia</li>
+                  <li>✔ Efectos visuales atractivos y manejo dinámico de luces</li>
+                  <li>✔ Sistema interno de lógica para resolución de niveles</li>
+                  <li>✔ Animaciones y ambientación estilo arcade</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProyectos" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estudios -->
+  <section id="estudios" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Estudios</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Diplomado en Tecnologías de Información - Colegio Universitario Cartago (2023 - 2026) </li>
+        <li class="list-group-item">Diplomado en programación y desarrollo de Videojuegos - Universidad Creativa (2022-2024)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Experiencia</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Servicio al Cliente y Soporte Tecnico - Tavrida S.A. (2020 - 2025)</li>
+        <li class="list-group-item">Tutor Académico en Programación, Informática y Matemáticas - Colegio Universitario Cartago (2021 - Actualidad)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certificados -->
+<section id="certificados" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Certificaciones</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Python Essentials 1 (Abr. 2024) -
+        <a href="https://www.credly.com/badges/b3af17e4-08f0-4c46-af33-c4d6fbddacda/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        CISCO: Introduction to Data Science (Nov. 2023) -
+        <a href="https://www.credly.com/badges/7ff8bec6-ba60-4632-9335-aed68cb52ed9/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        Computer Hardware Basics (Feb. 2024) -
+        <a href="https://www.credly.com/badges/d0eec039-9c71-4d53-a2ba-f8d6f6ec7d75/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        CCNA Introdución a Redes (Dic. 2024) -
+        <a href="https://www.credly.com/badges/73f2a527-2f9d-4b57-a54c-5d92f67c987e/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        Data Analytics Essentials (Jul. 2024) -
+        <a href="" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        Python Essentials 2 (Jul. 2024) -
+        <a href="" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        CISCO: Especialista de Soporte de TI (Jun. 2025) -
+        <a href="" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="py-5 bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Habilidades</h2>
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalTecnicas">Técnicas</button>
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalBlandas">Blandas</button>
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalHerramientas">Herramientas</button>
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalIdiomas">Idiomas</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contacto -->
+  <section id="contactame" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="text-center">
+        <h2 class="mb-3">Redes y Contactos</h2>
+        <a href="https://wa.me/50686997090" target="_blank" class="text-info me-3 fs-4">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://github.com/RoberthTecno" target="_blank" class="text-info me-3 fs-4">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/roberth-mu%C3%B1oz-b0630020a/" target="_blank" class="text-info me-3 fs-4">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:roberth.munoz.n@gmail.com" class="text-info fs-4">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+
+
+      <h3 class="text-center mb-4">Contactame</h3>
+      <form class="w-50 mx-auto">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="correo" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-info">Enviar</button>
+      </form>
+
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+
+
+  <!-- Modal Técnicas -->
+  <div class="modal fade" id="modalTecnicas" tabindex="-1" aria-labelledby="modalTecnicasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTecnicasLabel">Habilidades Técnicas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Programación en C#, .NET Framework, Java, Python, Node.js</li>
+            <li>Desarrollo web (HTML, CSS, JavaScript, Bootstrap)</li>
+            <li>Administración de redes LAN/WiFi</li>
+            <li>Manejo de bases de datos (SQL Server, MySQL, SQL Lite, PostgreSQL, Oracle, ETL, Data Warehouse)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Blandas -->
+  <div class="modal fade" id="modalBlandas" tabindex="-1" aria-labelledby="modalBlandasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBlandasLabel">Habilidades Blandas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Comunicación, Trabajo en Equipo, Resolución de Problemas</li>
+            <li>Pensamineto Analítico, Escucha Activa, Organización</li>
+            <li>Creatividad, Empatía, Gestión del Tiempo, Adaptabilidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Herramientas -->
+  <div class="modal fade" id="modalHerramientas" tabindex="-1" aria-labelledby="modalHerramientasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalHerramientasLabel">Herramientas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Visual Studio, VS Code, NetBeans, TextPad</li>
+            <li>Microsoft Office 365</li>
+            <li>Git y GitHub</li>
+            <li>Windows y Linux</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Herramientas -->
+  <div class="modal fade" id="modalIdiomas" tabindex="-1" aria-labelledby="modalIdiomaslabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalIdiomaslabel">Idiomas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Español Nativo</li>
+            <li>Ingles B2</li>
+            <li>Aleman A2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
