@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum - RMN</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .navbar {
+      background-color: #1f1f1f !important;
+    }
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #0dcaf0 !important;
+    }
+    .foto-perfil {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #0dcaf0;
+    }
+    .bg-light {
+      background-color: #1e1e1e !important;
+    }
+    .list-group-item {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+    .form-control {
+      background-color: #2a2a2a;
+      color: #ffffff;
+      border: 1px solid #444;
+    }
+    .form-control:focus {
+      background-color: #2a2a2a;
+      color: #ffffff;
+    }
+    iframe {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Roberth Muñoz Nanne</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="idiomaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Idioma
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="idiomaDropdown">
+            <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('es')">Español</a></li>
+            <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('en')">English</a></li>
+            <li><a class="dropdown-item" href="#" onclick="cambiarIdioma('de')">Deutsch</a></li>
+          </ul>
+        </li>
+          <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estudios">Estudios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificados">Certificaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactame">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Sobre mí -->
+  <section id="sobremi" class="py-5 mt-5 text-white" style="background-image: url('../img/bannersobremi.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="d-flex flex-column flex-md-row align-items-center p-4 rounded" style="background-color: rgba(0, 0, 0, 0.812);">
+            <div class="text-center mb-4 mb-md-0 me-md-4">
+              <img src="../img/yo.jpeg" alt="Tu foto" class="foto-perfil mb-3">
+            </div>
+            <div>
+              <h2 class="fw-bold">¡Hola! Soy Roberth Muñoz Nanne!</h2>
+              <p class="lead">Ingeniero en Tecnologías de la Información con experiencia en desarrollo de software, desarrollo web y soporte técnico. He trabajado con tecnologías como C#, Java, Python, JavaScript, React y ASP.NET, participando en proyectos colaborativos, desarrollo de aplicaciones y optimización de sistemas y procesos. Me caracterizo por la capacidad de adaptación, la resolución de problemas y el aprendizaje continuo, buscando aportar valor mediante soluciones tecnológicas eficientes y seguir creciendo profesionalmente en el área de desarrollo de software.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Mis Proyectos</h2>
+      <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/pwZUo899jek" title="Proyecto 1" allowfullscreen></iframe>
+              </div>
+              <h5>Sistema Bibliotecario</h5>
+              <p><strong>Herramientas:</strong> Java, Java Swing, PostgreSQL</p>
+              <ul class="list-unstyled">
+                <li>✔ Codigo Orientado a Objetos</li>
+                <li>✔ Gestión Completa del Flujo Bibliotecario</li>
+                <li>✔ Interfaz Intuitiva</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/x14wVOIkzDw" title="Proyecto 2" allowfullscreen></iframe>
+              </div>
+              <h5>Simulación Domótica Avanzada</h5>
+              <p><strong>Herramientas:</strong> C#, .NET Framework, Windows Forms</p>
+              <ul class="list-unstyled">
+                <li>✔ Simulación de encendido y apagado de luces por botones o por horario</li>
+                <li>✔ Cambiar nombre y color de luces dinámicamente</li>
+                <li>✔ Simulación de horas del día con control automatizado</li>
+                <li>✔ Modo "en casa" o "fuera de casa" para activar escenas inteligentes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/jqbCt6EQE2I" title="Proyecto 3" allowfullscreen></iframe>
+              </div>
+              <h5>Sistema de Gestión de Recursos Humanos</h5>
+              <p><strong>Herramientas:</strong> ASP.NET Web Forms, C#, SQL Server</p>
+              <ul class="list-unstyled">
+                <li>✔ Login seguro con cookies y verificación de roles</li>
+                <li>✔ Gestión de trabajadores y control de vacaciones por parte de RH</li>
+                <li>✔ Panel de trabajador para modificar datos y solicitar vacaciones</li>
+                <li>✔ Acceso y permisos diferenciados según el tipo de usuario</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/fktACZw2WaY" title="Proyecto 4" allowfullscreen></iframe>
+              </div>
+              <h5>Sistema de Cálculo de IMC</h5>
+              <p><strong>Herramientas:</strong> Python, TKinter, XML, JSON, PDF</p>
+              <ul class="list-unstyled">
+                  <li>✔ Registro y edición de usuarios con datos antropométricos</li>
+                  <li>✔ Cálculo automático del IMC y clasificación configurable</li>
+                  <li>✔ Generación de reportes en PDF</li>
+                  <li>✔ Procesamiento multihilo para evaluar todos los usuarios</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/ofVdku96JxA" title="Proyecto 5" allowfullscreen></iframe>
+              </div>
+              <h5>Plataforma de Servicios Varios</h5>
+              <p><strong>Herramientas:</strong> ASP.NET Web Forms, C#, SQL Server, Bootstrap, JavaScript</p>
+              <ul class="list-unstyled">
+                  <li>✔ Multilogin con paneles para clientes, oferentes y administradores</li>
+                  <li>✔ Sistema de calificación y reputación de oferentes</li>
+                  <li>✔ Integración de mapas para ubicación del servicio</li>
+                  <li>✔ Páginas dinámicas generadas según los datos en la base de datos</li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="text-center">
+              <div class="ratio ratio-16x9 w-75 mx-auto mb-3">
+                <iframe src="https://www.youtube.com/embed/j4HCUly6l4k" title="Proyecto 6" allowfullscreen></iframe>
+              </div>
+              <h5>Helltaker - Juego Puzzle</h5>
+              <p><strong>Herramientas:</strong> Godot, GDScript</p>
+              <ul class="list-unstyled">
+                  <li>✔ Juego estilo puzzle basado en lógica y estrategia</li>
+                  <li>✔ Efectos visuales atractivos y manejo dinámico de luces</li>
+                  <li>✔ Sistema interno de lógica para resolución de niveles</li>
+                  <li>✔ Animaciones y ambientación estilo arcade</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProyectos" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estudios -->
+  <section id="estudios" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Estudios</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Diplomado en Tecnologías de Información - Colegio Universitario Cartago (2023 - 2026) </li>
+        <li class="list-group-item">Diplomado en programación y desarrollo de Videojuegos - Universidad Creativa (2022-2024)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Experiencia</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Desarrollador Junior - RevArx (2022 - 2023)</li>
+        <li class="list-group-item">Asistente en Mecánica Dental y Tutor Académico - Colegio Universitario de Cartago (2024 – Abril 2026)</li>
+        <li class="list-group-item">Desarrollador Full Stack Junior - TicoDevs Software Solutions (Pasantía) (Junio 2026 – Agosto 2026)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certificados -->
+<section id="certificados" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Certificaciones</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Python Essentials 1 (Abr. 2024) -
+        <a href="https://www.credly.com/badges/b3af17e4-08f0-4c46-af33-c4d6fbddacda/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        CISCO: Introduction to Data Science (Nov. 2023) -
+        <a href="https://www.credly.com/badges/7ff8bec6-ba60-4632-9335-aed68cb52ed9/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        Computer Hardware Basics (Feb. 2024) -
+        <a href="https://www.credly.com/badges/d0eec039-9c71-4d53-a2ba-f8d6f6ec7d75/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+      <li class="list-group-item">
+        CCNA Introdución a Redes (Dic. 2024) -
+        <a href="https://www.credly.com/badges/73f2a527-2f9d-4b57-a54c-5d92f67c987e/public_url" target="_blank" class="text-info text-decoration-none">Cisco</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  
+
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="py-5 bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Habilidades</h2>
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalTecnicas">Técnicas</button>
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalBlandas">Blandas</button>
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalHerramientas">Herramientas</button>
+        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalIdiomas">Idiomas</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contacto -->
+  <section id="contactame" class="py-5 bg-light">
+    <div class="container">
+
+      <div class="text-center">
+        <h2 class="mb-3">Redes y Contactos</h2>
+        <a href="https://wa.me/50686997090" target="_blank" class="text-info me-3 fs-4">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://github.com/RoberthTecno" target="_blank" class="text-info me-3 fs-4">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/roberth-mu%C3%B1oz-b0630020a/" target="_blank" class="text-info me-3 fs-4">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:roberth.munoz.n@gmail.com" class="text-info fs-4">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+
+
+  <!-- Modal Técnicas -->
+  <div class="modal fade" id="modalTecnicas" tabindex="-1" aria-labelledby="modalTecnicasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTecnicasLabel">Habilidades Técnicas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>BackeEnd en: Java, C#, Python, Node.js, PHP, C, C++, ASP.NET Core y Framework, Autenticación y APIs REST.</li>
+            <li>FrontEnd en: HTML, CSS, JavaScript, Bootstrap, React, ASP Clásico, ASP.NET Core y Framework (MVC), PHP, Tkinter, Windows Forms.</li>
+            <li>Bases de datos: MySQL, SQL Server, PostgreSQL, MongoDB, SQLite, modelado entidad relación y normalización, Store Procedures, Views, Triggers, Funciones, Jobs.</li>
+            <li>Visualización de Datos: Power BI, Tableau, Excel y Python.</li>
+            <li>Soporte técnico: Diagnóstico y solución de fallos en hardware y software, mantenimiento de equipos, configuración de sistemas.</li>
+            <li>Pruebas de calidad: Verificación funcional y pruebas de ensamblaje de computadoras.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Blandas -->
+  <div class="modal fade" id="modalBlandas" tabindex="-1" aria-labelledby="modalBlandasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBlandasLabel">Habilidades Blandas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Comunicación efectiva, Atención al cliente, Pensamiento lógico y analítico</li>
+            <li>Trabajo en equipo, Responsabilidad, Adaptabilidad</li>
+            <li>Creatividad, Aprendizaje continuo , Gestión del Tiempo, Trabajo bajo presión</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Herramientas -->
+  <div class="modal fade" id="modalHerramientas" tabindex="-1" aria-labelledby="modalHerramientasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalHerramientasLabel">Herramientas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Visual Studio, VS Code, NetBeans, TextPad</li>
+            <li>Microsoft Office 365</li>
+            <li>Git y GitHub</li>
+            <li>Windows y Linux</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Herramientas -->
+  <div class="modal fade" id="modalIdiomas" tabindex="-1" aria-labelledby="modalIdiomaslabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalIdiomaslabel">Idiomas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Español Nativo</li>
+            <li>Ingles B2</li>
+            <li>Aleman A2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
